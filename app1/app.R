@@ -5,7 +5,7 @@ ui <- dashboardPage(
   
   skin = "green",
   
-  dashboardHeader(title = "App de genro por tipo de trabajo", titleWidth = 300),
+  dashboardHeader(title = "App por tipo de trabajo", titleWidth = 300),
   
   dashboardSidebar(
     
