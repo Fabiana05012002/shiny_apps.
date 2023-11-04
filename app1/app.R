@@ -2,7 +2,7 @@ library(shiny)
 library(shinydashboard)
 library(ggplot2)
 ui <- dashboardPage(
-  dashboardHeader(title = "Demo Shiny Dashboard", titleWidth = 300),
+  dashboardHeader(title = "App de genro por tipo de trabajo", titleWidth = 300),
   dashboardSidebar(
     width = 300,
     sidebarMenu(
