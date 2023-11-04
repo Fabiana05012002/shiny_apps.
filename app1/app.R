@@ -2,8 +2,13 @@ library(shiny)
 library(shinydashboard)
 library(ggplot2)
 ui <- dashboardPage(
+  
+  skin = "green",
+  
   dashboardHeader(title = "App de genro por tipo de trabajo", titleWidth = 300),
+  
   dashboardSidebar(
+    
     width = 300,
     sidebarMenu(
       menuItem("Datos", tabName = "datos", icon = icon("table")),
@@ -11,11 +16,14 @@ ui <- dashboardPage(
     )
   ),
   dashboardBody(
+    
     tabItems(
       tabItem(
         title = "Contenido de la pestaña Datos",
+        
         tabName = "datos",
         tabsetPanel(
+          
           tabPanel("Nombre de país",
                    h3("Lista de países"),
                    selectInput("Pais", "Escoja el país", choices = NULL, selected = NULL),
@@ -23,12 +31,15 @@ ui <- dashboardPage(
                    actionButton("filtro_pais", "Filtrar"),
                    dataTableOutput("tabla_pais")
           ),
+          
           tabPanel("Códigos",
                    h3("Lista de códigos"),
                    selectInput("Codigo", "Escoja el código del país", choices = NULL, selected = NULL),
                    actionButton("filtro_codigo", "Filtrar"),
                    dataTableOutput("tabla_codigo")
+                   
           ),
+          
           tabPanel("Años",
                    h3("Lista de años"),
                    selectInput("Año", "Escoja el año", choices = NULL, selected = NULL),
@@ -37,7 +48,8 @@ ui <- dashboardPage(
           )
         )
       ),
-      tabItem(
+      
+      tabItem( #Tarda un poco en cargar, darle tiempo al grafico
         title = "Contenido de la pestaña Gráficos",
         tabName = "grafico",
         tabsetPanel(
